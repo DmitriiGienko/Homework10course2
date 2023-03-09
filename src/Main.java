@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -71,6 +72,19 @@ public class Main {
         // решение через лямбду
         Supplier<Integer> supplier1 = () -> (int) (Math.random() * 100);
         System.out.println("Сгенерировали число " + supplier1.getT());
+
+
+        System.out.println("______Задача 5_____");
+
+        /* Долго думал что и как делать...
+        В итоге написал программку можно ли пить алкоголь :)
+         */
+
+        System.out.println("Сколько вам лет?");
+
+        Function<Predicate<Integer>, String> ternaryOperator = isAdult ->
+                isAdult.test(sc.nextInt()) ? "Можно выпить!" : "Иди в школу";
+        System.out.println(ternaryOperator.accept(age -> age >= 18));
 
 
     }
